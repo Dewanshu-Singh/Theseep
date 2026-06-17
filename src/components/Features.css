@@ -1,0 +1,116 @@
+.features-section {
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 767px) {
+  .features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; /* Give plenty of space to scroll between cards */
+    padding-bottom: 2rem;
+  }
+  
+  .feature-card {
+    position: sticky;
+    box-shadow: 0 -10px 30px rgba(0,0,0,0.1); /* Shadow cast upwards onto the card below it */
+    background: #ffffff; /* Solid background so stacked cards hide the ones beneath them */
+  }
+
+  .feature-card:nth-child(1) {
+    top: 100px; /* Header is ~70px, plus some padding */
+    z-index: 10;
+  }
+
+  .feature-card:nth-child(2) {
+    top: 120px;
+    z-index: 20;
+  }
+
+  .feature-card:nth-child(3) {
+    top: 140px;
+    z-index: 30;
+  }
+
+  .feature-card:nth-child(4) {
+    top: 160px;
+    z-index: 40;
+  }
+}
+
+@media (min-width: 768px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.feature-card {
+  padding: 2rem;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+
+.feature-card:hover::before {
+  transform: scaleX(1);
+}
+
+.feature-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  background: rgba(128, 0, 0, 0.08);
+  color: var(--accent-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon-wrapper {
+  background: var(--accent-gradient);
+  color: white;
+  transform: rotate(5deg) scale(1.1);
+}
+
+.feature-title {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.feature-description {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
