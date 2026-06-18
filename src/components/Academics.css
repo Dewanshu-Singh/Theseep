@@ -1,11 +1,19 @@
 .academics-section {
   position: relative;
-  background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('/bg4.webp');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.5)), url('/bg4.webp');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
   padding-top: 3rem;
   padding-bottom: 3rem;
+}
+
+.academics-section .section-title {
+  color: #ffffff;
+}
+
+.academics-section .section-subtitle {
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .single-program-container {
@@ -216,3 +224,21 @@
   box-shadow: 0 10px 25px rgba(128,0,0,0.2);
 }
 
+.scholarship-inline-link {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  margin-top: 1.2rem;
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  transform: translateZ(30px);
+}
+
+.scholarship-inline-link:hover {
+  color: #a00;
+  text-decoration: none;
+  transform: translateZ(40px) scale(1.02);
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Database, MonitorPlay, Code, BrainCircuit, LineChart } from 'lucide-react';
 import './Academics.css';
 
@@ -6,13 +7,27 @@ const Academics = () => {
   return (
     <section id="academics" className="academics-section">
       <div className="container">
-        <h2 className="section-title">Choose Your <span className="text-gradient">Dual-Degree</span> Pathway</h2>
-        <p className="section-subtitle">
-          A revolutionary academic pathway integrating deep tech with practical engineering.
-        </p>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
+          <h2 className="section-title">Choose Your <span className="text-gradient">Dual-Degree</span> Pathway</h2>
+          <p className="section-subtitle">
+            A revolutionary academic pathway integrating deep tech with practical engineering.
+          </p>
+        </motion.div>
 
         <div className="single-program-container">
-          <div className="glass-panel program-card-wide">
+          <motion.div 
+            className="glass-panel program-card-wide"
+            initial={{ opacity: 0, y: 50, rotateX: 10 }}
+            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ type: "spring", stiffness: 80, damping: 20, delay: 0.2 }}
+            whileHover={{ y: -8, rotateX: 4, scale: 1.02 }}
+          >
             <div className="program-badge">Flagship Program</div>
             
             <div className="program-content-wide">
@@ -43,15 +58,21 @@ const Academics = () => {
               <div className="highlight-item"><LineChart size={18}/> Predictive Analytics</div>
             </div>
 
-            <a 
+            <motion.a 
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
               href="/Bs_Data_Science_Syllabus (8).pdf" 
               target="_blank" 
               rel="noopener noreferrer" 
               className="btn btn-primary w-full mt-6"
             >
               View Complete Curriculum
+            </motion.a>
+
+            <a href="#scholarships" className="scholarship-inline-link">
+              * Scholarship is available
             </a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

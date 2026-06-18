@@ -1,0 +1,200 @@
+.scholarship-section {
+  position: relative;
+  background-color: var(--bg-secondary);
+  overflow: hidden;
+  padding: 5rem 0;
+}
+
+.scholarship-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.scholarship-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-bottom: 4rem;
+  perspective: 1500px; /* Required for 3D card flips */
+}
+
+@media (min-width: 768px) {
+  .scholarship-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center; /* Important for the highlighted card to pop out */
+  }
+}
+
+/* Individual Cards */
+.scholarship-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transform-style: preserve-3d;
+}
+
+.scholarship-card:hover {
+  box-shadow: 0 20px 40px rgba(128, 0, 0, 0.1);
+  border-color: rgba(128, 0, 0, 0.2);
+}
+
+.popular-card {
+  border: 2px solid var(--accent-primary);
+  transform: scale(1.05);
+  box-shadow: 0 20px 50px rgba(128, 0, 0, 0.15);
+  z-index: 2;
+}
+
+@media (max-width: 767px) {
+  .popular-card {
+    transform: scale(1);
+    border-width: 1px;
+  }
+}
+
+.popular-badge {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-gradient);
+  color: white;
+  padding: 0.35rem 1.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 0 0 12px 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  box-shadow: 0 4px 10px rgba(128, 0, 0, 0.3);
+}
+
+.card-header {
+  padding: 2.5rem 2rem 1.5rem;
+  text-align: center;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: linear-gradient(to bottom, rgba(128,0,0,0.02), transparent);
+}
+
+.popular-card .card-header {
+  padding-top: 3.5rem;
+  background: linear-gradient(to bottom, rgba(128,0,0,0.05), transparent);
+}
+
+.card-header h3 {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.income-amount {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--accent-primary);
+  font-family: var(--font-heading);
+}
+
+.card-body {
+  padding: 2rem;
+  flex-grow: 1;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.check-icon {
+  color: var(--success);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.gift-item {
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+}
+
+.gift-icon {
+  color: #f59e0b;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.nil-item {
+  margin-top: 0.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px dashed rgba(0,0,0,0.1);
+  color: var(--text-muted) !important;
+}
+
+.nil-icon {
+  color: var(--text-muted);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Info Panel */
+.scholarship-info-panel {
+  background: linear-gradient(135deg, rgba(128,0,0,0.05), rgba(128,0,0,0.02));
+  border: 1px solid rgba(128,0,0,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+}
+
+.info-icon-wrapper {
+  background: var(--accent-gradient);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 8px 15px rgba(128,0,0,0.2);
+}
+
+.info-content {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.info-content strong {
+  color: var(--text-primary);
+}
+
+.mt-2 {
+  margin-top: 0.75rem;
+}

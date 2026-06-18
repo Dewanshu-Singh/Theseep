@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { Briefcase, GraduationCap, Award, Globe } from 'lucide-react';
 import './WhyChooseVGU.css';
 
@@ -26,23 +27,53 @@ const WhyChooseVGU = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 15 }
+    }
+  };
+
   return (
     <section id="why-vgu" className="section-padding why-vgu-section" style={{ backgroundImage: 'url(/bg7.jpeg)' }}>
       <div className="section-overlay"></div>
       <div className="container relative-z">
-        <div className="why-vgu-header animate-fade-in">
+        <motion.div 
+          className="why-vgu-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <h2 className="section-title">Why Choose <span className="text-gradient">VGU?</span></h2>
           <p className="section-subtitle">
             Experience world-class education, unmatched global exposure, and a proven track record of successful placements.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="reasons-grid">
+        <motion.div 
+          className="reasons-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {reasons.map((reason, index) => (
-            <div 
+            <motion.div 
               className="reason-card-wrapper" 
               key={index}
-              style={{ animationDelay: `${index * 0.15}s` }}
+              variants={cardVariants}
+              whileHover={{ y: -15, rotateX: 10, rotateY: -5, scale: 1.02 }}
             >
               <div className="reason-card">
                 <div className="reason-icon-wrapper">
@@ -54,9 +85,9 @@ const WhyChooseVGU = () => {
                 <p className="reason-description">{reason.description}</p>
                 <div className="card-shine"></div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

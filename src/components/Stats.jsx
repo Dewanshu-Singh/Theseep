@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { motion } from 'framer-motion';
 import { GraduationCap, Briefcase, Building, TrendingUp } from 'lucide-react';
 import './Stats.css';
 
@@ -16,13 +17,12 @@ const CountUp = ({ end, suffix = '', duration = 2000 }) => {
           const step = (timestamp) => {
             if (!startTimestamp) startTimestamp = timestamp;
             const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            // Ease out quart for a smooth slow down at the end
             const easeOut = 1 - Math.pow(1 - progress, 4);
             setCount(Math.floor(easeOut * end));
             if (progress < 1) {
               window.requestAnimationFrame(step);
             } else {
-              setCount(end); // Ensure it lands exactly on the target number
+              setCount(end); 
             }
           };
           window.requestAnimationFrame(step);
@@ -71,15 +71,39 @@ const Stats = () => {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 }
+    }
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { 
+      opacity: 1, 
+      scale: 1,
+      transition: { type: "spring", stiffness: 100, damping: 15 }
+    }
+  };
+
   return (
     <section className="stats-section section-padding">
       <div className="container">
-        <div className="stats-grid">
+        <motion.div 
+          className="stats-grid"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
           {stats.map((stat, index) => (
-            <div 
+            <motion.div 
               className="stat-card-wrapper" 
               key={index}
-              style={{ animationDelay: `${index * 0.15}s` }}
+              variants={cardVariants}
+              whileHover={{ y: -10, rotateX: 5, rotateY: 5, scale: 1.05 }}
             >
               <div className="stat-card">
                 <div className="stat-icon-wrapper">
@@ -95,9 +119,9 @@ const Stats = () => {
                 </div>
                 <div className="card-shine"></div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

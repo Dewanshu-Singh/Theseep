@@ -1,33 +1,64 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import { ArrowRight, Play, CheckCircle } from 'lucide-react';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.15,
+        delayChildren: 0.1
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { type: "spring", stiffness: 100, damping: 15 }
+    }
+  };
+
   return (
     <section id="home" className="hero">
       <div className="container hero-container">
-        <div className="hero-content animate-fade-in">
-          <div className="badge">
+        <motion.div 
+          className="hero-content"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div variants={itemVariants} className="badge">
             <span className="badge-dot"></span>
             Zero Cost IIT Degree Without JEE
-          </div>
+          </motion.div>
           
-          <h1 className="hero-title">
+          <motion.h1 variants={itemVariants} className="hero-title">
             Become an <span className="text-gradient">IITian</span> with Us<br />
             An IIT Dream Career, Now at University
-          </h1>
+          </motion.h1>
           
-          <p className="hero-description">
+          <motion.p variants={itemVariants} className="hero-description">
             The SEEP Scholarship Pathway enables shortlisted students to pursue a 4-year IIT BS Degree along with a B.Tech/BBA from a NAAC A+ University, with full offline, campus-based classroom support.
-          </p>
+          </motion.p>
           
-          <div className="hero-actions">
-            <button className="btn btn-primary hero-btn">
+          <motion.div variants={itemVariants} className="hero-actions">
+            <motion.button 
+              whileHover={{ scale: 1.05 }} 
+              whileTap={{ scale: 0.95 }} 
+              className="btn btn-primary hero-btn"
+            >
               Apply Now <ArrowRight size={18} />
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
           
-          <div className="hero-stats">
+          <motion.div variants={itemVariants} className="hero-stats">
             <div className="stat-item">
               <CheckCircle className="stat-icon" size={20} />
               <span>100% IIT BS Qualifier Success</span>
@@ -36,11 +67,21 @@ const HeroSection = () => {
               <CheckCircle className="stat-icon" size={20} />
               <span>100% IIT BS Fee Funded</span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
         
-        <div className="hero-visual animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <div className="glass-panel form-card">
+        <motion.div 
+          className="hero-visual"
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, type: "spring", bounce: 0.4 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <motion.div 
+            className="glass-panel form-card"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+          >
             <div className="form-header">
               <h3>Start The SEEP Application</h3>
               <p>Primary Registration Form</p>
@@ -62,16 +103,21 @@ const HeroSection = () => {
                   <option value="p2">IIT BS in Management + BBA</option>
                 </select>
               </div>
-              <button type="submit" className="btn btn-primary w-full submit-btn">
+              <motion.button 
+                whileHover={{ scale: 1.02 }} 
+                whileTap={{ scale: 0.98 }}
+                type="submit" 
+                className="btn btn-primary w-full submit-btn"
+              >
                 Apply Now <ArrowRight size={18} />
-              </button>
+              </motion.button>
             </form>
             <div className="form-footer">
               <CheckCircle size={14} style={{ color: 'var(--success)' }} />
               <span>No hidden conditions for selected scholars.</span>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );

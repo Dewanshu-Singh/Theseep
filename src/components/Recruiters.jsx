@@ -4,8 +4,8 @@ import './Recruiters.css';
 const Recruiters = () => {
   const companies = [
     { name: 'Amazon', logo: '/amazon.webp' },
-    { name: 'Microsoft', logo: '/microsoft.webp' },
-    { name: 'Google', logo: '/google.webp' },
+    { name: 'Microsoft', logo: '/microsoft.png' },
+    { name: 'Google', logo: '/google.png' },
     { name: 'IBM', logo: '/ibm.webp' },
     { name: 'Deloitte', logo: '/Deloitte.jpg' },
     { name: 'Accenture', logo: '/Accenture.png' },
@@ -33,7 +33,7 @@ const Recruiters = () => {
               <img 
                 src={company.logo} 
                 alt={`${company.name} logo`}
-                className="company-logo"
+                className={`company-logo ${company.name.toLowerCase()}-logo`}
                 onError={(e) => {
                   // Fallback if logo fails to load
                   e.target.style.display = 'none';

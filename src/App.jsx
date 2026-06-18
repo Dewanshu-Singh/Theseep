@@ -5,10 +5,12 @@ import Features from './components/Features';
 import WhyChooseVGU from './components/WhyChooseVGU';
 import Stats from './components/Stats';
 import Recruiters from './components/Recruiters';
+import PromoVideo from './components/PromoVideo';
 import Academics from './components/Academics';
 import AdmissionSteps from './components/AdmissionSteps';
 import Gallery from './components/Gallery';
 import Testimonials from './components/Testimonials';
+import CampusLife from './components/CampusLife';
 import Footer from './components/Footer';
 import './App.css';
 
@@ -30,6 +32,8 @@ function App() {
         <Academics />
         <AdmissionSteps />
         <Gallery />
+        <CampusLife />
+        <PromoVideo />
         <Testimonials />
       </main>
       <Footer />

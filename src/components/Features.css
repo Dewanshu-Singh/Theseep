@@ -1,6 +1,10 @@
 .features-section {
   position: relative;
-  background: var(--bg-secondary);
+  background-color: var(--bg-secondary);
+  background-image: linear-gradient(rgba(248, 249, 250, 0.3), rgba(248, 249, 250, 0.3)), url('/bg9.webp');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .features-grid {

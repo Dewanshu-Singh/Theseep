@@ -140,13 +140,10 @@
 
 .video-testimonials-scroll {
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
-  overflow-x: auto;
-  padding: 0 calc(50vw - 50% + 2rem);
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none; /* Firefox */
-  padding-bottom: 2rem; /* Give room for hover shadow */
+  padding: 0 2rem 2rem 2rem;
 }
 
 .video-testimonials-scroll::-webkit-scrollbar {
@@ -200,14 +197,13 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.8;
-  transition: transform 0.5s ease, opacity 0.5s ease;
+  opacity: 1;
+  transition: transform 0.5s ease;
 }
 
 .video-card:hover .video-thumbnail img,
 .video-card:active .video-thumbnail img {
   transform: scale(1.08);
-  opacity: 0.6;
 }
 
 /* Modal Styles */
@@ -296,9 +292,15 @@
   top: 0; left: 0; right: 0; bottom: 0;
   padding: 1.5rem;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, transparent 50%, rgba(0,0,0,0.5) 100%);
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  transition: background 0.3s ease;
+}
+
+.video-card:hover .video-overlay,
+.video-card:active .video-overlay {
+  background: rgba(0,0,0,0.2);
 }
 
 .video-info {
@@ -326,10 +328,6 @@
 }
 
 .play-button {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 64px;
   height: 48px;
   background: #ff0000;
@@ -339,11 +337,10 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: box-shadow 0.3s ease;
 }
 
 .video-card:hover .play-button,
 .video-card:active .play-button {
-  transform: translate(-50%, -50%) scale(1.15);
   box-shadow: 0 6px 20px rgba(255, 0, 0, 0.6);
 }

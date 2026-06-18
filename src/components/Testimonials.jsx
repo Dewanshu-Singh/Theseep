@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { ShieldCheck, Play, X } from 'lucide-react';
 import './Testimonials.css';
 
@@ -17,7 +18,13 @@ const Testimonials = () => {
       <div className="container">
         
         {/* Success & Refund Assurance */}
-        <div className="glass-panel assurance-box">
+        <motion.div 
+          className="glass-panel assurance-box"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="assurance-header">
             <ShieldCheck size={32} className="shield-icon" />
             <div>
@@ -30,27 +37,33 @@ const Testimonials = () => {
           </p>
           
           <div className="stats-row">
-            <div className="stat-card">
+            <motion.div className="stat-card" whileHover={{ scale: 1.05 }}>
               <h3>100%</h3>
               <p>Qualifier Success</p>
-            </div>
-            <div className="stat-card">
+            </motion.div>
+            <motion.div className="stat-card" whileHover={{ scale: 1.05 }}>
               <h3>96%</h3>
               <p>First Attempt</p>
-            </div>
-            <div className="stat-card">
+            </motion.div>
+            <motion.div className="stat-card" whileHover={{ scale: 1.05 }}>
               <h3>4%</h3>
               <p>Second Attempt</p>
-            </div>
+            </motion.div>
           </div>
 
           <div className="refund-notice">
             <strong>Refund Assurance:</strong> In the rare case that a student does not qualify for the IIT BS Degree in any attempt and chooses to discontinue from the university, The SEEP will ensure a full refund of the paid academic fee, along with the refund of the remaining hostel fee.
           </div>
-        </div>
+        </motion.div>
 
         {/* Video Testimonials */}
-        <div className="testimonials-header">
+        <motion.div 
+          className="testimonials-header"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.6 }}
+        >
           <div className="badge" style={{ margin: '0 auto 1.5rem auto', display: 'inline-flex' }}>
             Student Testimonials
           </div>
@@ -58,51 +71,82 @@ const Testimonials = () => {
           <p className="section-subtitle">
             Real experiences from students building their IIT-powered future with The SEEP.
           </p>
-        </div>
+        </motion.div>
 
         <div className="video-testimonials-wrapper">
-          <div className="video-testimonials-scroll">
+          <motion.div 
+            className="video-testimonials-scroll"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              visible: { opacity: 1, transition: { staggerChildren: 0.15 } },
+              hidden: { opacity: 0 }
+            }}
+          >
             {videoTestimonials.map((video) => (
-              <div className="glass-panel video-card" key={video.id} onClick={() => setActiveVideo(video.videoId)} style={{ cursor: 'pointer' }}>
+              <motion.div 
+                className="glass-panel video-card" 
+                key={video.id} 
+                onClick={() => setActiveVideo(video.videoId)} 
+                style={{ cursor: 'pointer' }}
+                variants={{
+                  hidden: { opacity: 0, x: 50 },
+                  visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } }
+                }}
+                whileHover={{ y: -8, scale: 1.02 }}
+              >
                 <div className="video-thumbnail">
                   <img src={`https://img.youtube.com/vi/${video.videoId}/maxresdefault.jpg`} alt={video.name} onError={(e) => { e.target.src = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`; }} />
                   <div className="video-overlay">
-                    <div className="video-info">
-                      <ShieldCheck className="video-badge" size={24} />
-                      <div>
-                        <h4>{video.name} {video.program}</h4>
-                        <p>The SEEP: Be Future Ready</p>
-                      </div>
-                    </div>
-                    <button className="play-button">
+                    <motion.button 
+                      className="play-button"
+                      whileHover={{ scale: 1.1, backgroundColor: "rgba(128, 0, 0, 0.9)" }}
+                      whileTap={{ scale: 0.9 }}
+                    >
                       <Play size={28} fill="currentColor" />
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
 
         {/* Video Modal Overlay */}
-        {activeVideo && (
-          <div className="video-modal-overlay" onClick={() => setActiveVideo(null)}>
-            <div className="video-modal-content" onClick={(e) => e.stopPropagation()}>
-              <button className="video-modal-close" onClick={() => setActiveVideo(null)}>
-                <X size={28} />
-              </button>
-              <div className="video-modal-iframe-container">
-                <iframe
-                  src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
-                  title="YouTube video player"
-                  frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                ></iframe>
-              </div>
-            </div>
-          </div>
-        )}
+        <AnimatePresence>
+          {activeVideo && (
+            <motion.div 
+              className="video-modal-overlay" 
+              onClick={() => setActiveVideo(null)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div 
+                className="video-modal-content" 
+                onClick={(e) => e.stopPropagation()}
+                initial={{ scale: 0.8, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.8, opacity: 0 }}
+                transition={{ type: "spring", damping: 20 }}
+              >
+                <button className="video-modal-close" onClick={() => setActiveVideo(null)}>
+                  <X size={28} />
+                </button>
+                <div className="video-modal-iframe-container">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
       </div>
     </section>

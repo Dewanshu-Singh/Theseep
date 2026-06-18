@@ -69,3 +69,13 @@
     height: 40px;
   }
 }
+
+.microsoft-logo { transform: scale(1.4); }
+.amazon-logo { transform: scale(1.4); }
+.capgemini-logo { transform: scale(1.3); }
+
+.marquee-item:hover .microsoft-logo,
+.marquee-item:hover .amazon-logo,
+.marquee-item:hover .capgemini-logo {
+  transform: scale(1.6);
+}
