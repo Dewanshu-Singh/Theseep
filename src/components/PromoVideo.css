@@ -118,3 +118,21 @@
   right: -50px;
   background: radial-gradient(circle, rgba(236, 72, 153, 0.3) 0%, rgba(236, 72, 153, 0) 70%);
 }
+
+@media (max-width: 576px) {
+  .custom-play-btn {
+    width: 60px;
+    height: 60px;
+  }
+  .custom-play-btn svg {
+    width: 30px;
+    height: 30px;
+  }
+  .video-overlay-text {
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 1.3;
+  }
+}
