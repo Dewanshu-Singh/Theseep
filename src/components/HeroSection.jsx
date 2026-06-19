@@ -60,11 +60,11 @@ const HeroSection = () => {
           
           <motion.div variants={itemVariants} className="hero-stats">
             <div className="stat-item">
-              <CheckCircle className="stat-icon" size={20} />
+              <CheckCircle className="hero-stat-icon" size={20} />
               <span>100% IIT BS Qualifier Success</span>
             </div>
             <div className="stat-item">
-              <CheckCircle className="stat-icon" size={20} />
+              <CheckCircle className="hero-stat-icon" size={20} />
               <span>100% IIT BS Fee Funded</span>
             </div>
           </motion.div>
