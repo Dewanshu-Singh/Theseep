@@ -123,9 +123,11 @@
 .stat-item {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  font-weight: 500;
+  gap: 0.75rem;
+  font-weight: 600;
+  font-size: 1.15rem;
   color: white;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-stat-icon {
