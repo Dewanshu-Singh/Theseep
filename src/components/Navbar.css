@@ -17,10 +17,17 @@
 }
 
 @media (max-width: 768px) {
+  .top-bar {
+    padding: 6px 0;
+  }
   .top-bar-content {
     flex-direction: column;
-    gap: 4px;
-    font-size: 0.8rem;
+    gap: 2px;
+    font-size: 0.75rem;
+    text-align: center;
+  }
+  .top-bar-left {
+    font-weight: 600;
   }
 }
 
