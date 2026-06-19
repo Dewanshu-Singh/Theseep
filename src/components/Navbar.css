@@ -1,5 +1,5 @@
 .top-bar {
-  background-color: #000B29;
+  background-color: var(--accent-primary);
   color: #ffffff;
   text-align: center;
   padding: 8px 0;
