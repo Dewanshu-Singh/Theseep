@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronRight, Shield } from 'lucide-react';
+import { Menu, X, ChevronRight } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {

@@ -5,7 +5,7 @@
   background-attachment: fixed; /* Parallax effect */
   position: relative;
   overflow: visible;
-  z-index: 5;
+  z-index: 50;
 }
 
 .section-overlay {
@@ -180,4 +180,32 @@
 .reason-card:hover .card-shine,
 .reason-card:active .card-shine {
   transform: rotate(-45deg) translate(100%, 100%);
+}
+
+@media (max-width: 767px) {
+  .reasons-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+    padding-bottom: 5rem;
+  }
+  
+  .reason-card-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    height: auto;
+  }
+  
+  .reason-card {
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 -15px 30px rgba(0,0,0,0.1) !important;
+    border-top: 1px solid rgba(0,0,0,0.05);
+    height: 100%;
+  }
+
+  /* Stagger the top positions to create a visible deck of cards effect */
+  .card-wrapper-1 { top: 110px; z-index: 10; }
+  .card-wrapper-2 { top: 125px; z-index: 11; }
+  .card-wrapper-3 { top: 140px; z-index: 12; }
+  .card-wrapper-4 { top: 155px; z-index: 13; }
 }

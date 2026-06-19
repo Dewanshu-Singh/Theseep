@@ -11,26 +11,6 @@ const AdmissionSteps = () => {
     { num: '5', title: 'Start', desc: 'Begin IIT BS + University degree.' }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2
-      }
-    }
-  };
-
-  const stepVariants = {
-    hidden: { opacity: 0, scale: 0.8, y: 20 },
-    visible: { 
-      opacity: 1, 
-      scale: 1, 
-      y: 0,
-      transition: { type: "spring", stiffness: 120, damping: 14 }
-    }
-  };
-
   return (
     <section id="admissions" className="section-padding steps-section">
       <div className="container">
@@ -46,13 +26,7 @@ const AdmissionSteps = () => {
           </p>
         </motion.div>
 
-        <motion.div 
-          className="steps-container"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="steps-container">
           <motion.div 
             className="steps-line"
             initial={{ opacity: 0, scaleY: 0, scaleX: 0 }}
@@ -66,7 +40,10 @@ const AdmissionSteps = () => {
             <motion.div 
               className="step-item" 
               key={index}
-              variants={stepVariants}
+              initial={{ opacity: 0.3, scale: 0.95, x: -20 }}
+              whileInView={{ opacity: 1, scale: 1, x: 0 }}
+              viewport={{ margin: "-35% 0px -35% 0px" }}
+              transition={{ duration: 0.5, type: "spring", bounce: 0.4 }}
             >
               <motion.div 
                 className="step-number"
@@ -83,7 +60,7 @@ const AdmissionSteps = () => {
               </motion.div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

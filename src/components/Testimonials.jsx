@@ -136,7 +136,7 @@ const Testimonials = () => {
                 </button>
                 <div className="video-modal-iframe-container">
                   <iframe
-                    src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1`}
+                    src={`https://www.youtube.com/embed/${activeVideo}?autoplay=1&playsinline=1&modestbranding=1`}
                     title="YouTube video player"
                     frameBorder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

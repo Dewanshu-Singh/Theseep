@@ -27,23 +27,6 @@ const WhyChooseVGU = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.15 }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 15 }
-    }
-  };
-
   return (
     <section id="why-vgu" className="section-padding why-vgu-section" style={{ backgroundImage: 'url(/bg7.jpeg)' }}>
       <div className="section-overlay"></div>
@@ -61,21 +44,17 @@ const WhyChooseVGU = () => {
           </p>
         </motion.div>
 
-        <motion.div 
-          className="reasons-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="reasons-grid">
           {reasons.map((reason, index) => (
-            <motion.div 
-              className="reason-card-wrapper" 
-              key={index}
-              variants={cardVariants}
-              whileHover={{ y: -15, rotateX: 10, rotateY: -5, scale: 1.02 }}
-            >
-              <div className="reason-card">
+            <div className={`reason-card-wrapper card-wrapper-${index + 1}`} key={index}>
+              <motion.div 
+                className="reason-card"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15, type: "spring", stiffness: 100, damping: 15 }}
+                viewport={{ once: true, margin: "-50px" }}
+                whileHover={{ y: -15, rotateX: 10, rotateY: -5, scale: 1.02 }}
+              >
                 <div className="reason-icon-wrapper">
                   <div className="reason-icon">
                     {reason.icon}
@@ -84,10 +63,10 @@ const WhyChooseVGU = () => {
                 <h3 className="reason-title">{reason.title}</h3>
                 <p className="reason-description">{reason.description}</p>
                 <div className="card-shine"></div>
-              </div>
-            </motion.div>
+              </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

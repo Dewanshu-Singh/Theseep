@@ -13,40 +13,7 @@
   gap: 2rem;
 }
 
-@media (max-width: 767px) {
-  .features-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 4rem; /* Give plenty of space to scroll between cards */
-    padding-bottom: 2rem;
-  }
-  
-  .feature-card {
-    position: sticky;
-    box-shadow: 0 -10px 30px rgba(0,0,0,0.1); /* Shadow cast upwards onto the card below it */
-    background: #ffffff; /* Solid background so stacked cards hide the ones beneath them */
-  }
 
-  .feature-card:nth-child(1) {
-    top: 100px; /* Header is ~70px, plus some padding */
-    z-index: 10;
-  }
-
-  .feature-card:nth-child(2) {
-    top: 120px;
-    z-index: 20;
-  }
-
-  .feature-card:nth-child(3) {
-    top: 140px;
-    z-index: 30;
-  }
-
-  .feature-card:nth-child(4) {
-    top: 160px;
-    z-index: 40;
-  }
-}
 
 @media (min-width: 768px) {
   .features-grid {
@@ -60,14 +27,15 @@
   }
 }
 
-.feature-card {
+.feature-card-inner {
   padding: 2rem;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  height: 100%;
 }
 
-.feature-card::before {
+.feature-card-inner::before {
   content: '';
   position: absolute;
   top: 0;
@@ -80,12 +48,12 @@
   transition: transform 0.4s ease;
 }
 
-.feature-card:hover {
+.feature-card-inner:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
-.feature-card:hover::before {
+.feature-card-inner:hover::before {
   transform: scaleX(1);
 }
 
@@ -102,7 +70,7 @@
   transition: all 0.3s ease;
 }
 
-.feature-card:hover .feature-icon-wrapper {
+.feature-card-inner:hover .feature-icon-wrapper {
   background: var(--accent-gradient);
   color: white;
   transform: rotate(5deg) scale(1.1);
@@ -117,4 +85,31 @@
   color: var(--text-secondary);
   font-size: 0.9375rem;
   line-height: 1.6;
+}
+
+@media (max-width: 767px) {
+  .features-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 8rem; /* Large gap ensures each card scrolls individually */
+    padding-bottom: 5rem; /* Reduced to avoid huge white space */
+  }
+  
+  .feature-card-wrapper {
+    position: -webkit-sticky;
+    position: sticky;
+    height: auto;
+  }
+  
+  .feature-card-inner {
+    background: rgba(255, 255, 255, 0.98); /* Almost solid to hide cards underneath */
+    box-shadow: 0 -15px 30px rgba(0,0,0,0.1) !important; /* Shadow on top to emphasize stacking */
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+
+  /* Stagger the top positions to create a visible deck of cards effect */
+  .card-wrapper-1 { top: 110px; z-index: 10; }
+  .card-wrapper-2 { top: 125px; z-index: 11; }
+  .card-wrapper-3 { top: 140px; z-index: 12; }
+  .card-wrapper-4 { top: 155px; z-index: 13; }
 }

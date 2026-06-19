@@ -11,6 +11,16 @@
   background-attachment: fixed;
 }
 
+@media (max-width: 1023px) {
+  .hero {
+    align-items: flex-start;
+    padding-top: 10rem;
+  }
+  .form-card {
+    margin-top: 1rem;
+  }
+}
+
 .blob-1 {
   width: 400px;
   height: 400px;
@@ -29,14 +39,15 @@
 }
 
 .hero-container {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column-reverse;
   gap: 4rem;
   align-items: center;
 }
 
 @media (min-width: 1024px) {
   .hero-container {
+    display: grid;
     grid-template-columns: 1.2fr 1fr;
   }
 }
@@ -205,7 +216,8 @@ select.form-input {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 6rem 0 3rem;
+    padding: 10rem 0 3rem;
+    align-items: flex-start;
   }
   .hero-title {
     font-size: 2.25rem;

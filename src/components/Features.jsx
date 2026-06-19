@@ -27,25 +27,6 @@ const Features = () => {
     }
   ];
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15
-      }
-    }
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: { 
-      opacity: 1, 
-      y: 0,
-      transition: { type: "spring", stiffness: 100, damping: 15 }
-    }
-  };
-
   return (
     <section id="scholarships" className="section-padding features-section">
       <div className="container">
@@ -61,28 +42,26 @@ const Features = () => {
           </p>
         </motion.div>
 
-        <motion.div 
-          className="features-grid"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
+        <div className="features-grid">
           {features.map((feature, index) => (
-            <motion.div 
-              className="glass-panel feature-card" 
-              key={index}
-              variants={cardVariants}
-              whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.08)" }}
-            >
-              <div className="feature-icon-wrapper">
-                {feature.icon}
-              </div>
-              <h3 className="feature-title">{feature.title}</h3>
-              <p className="feature-description">{feature.description}</p>
-            </motion.div>
+            <div className={`feature-card-wrapper card-wrapper-${index + 1}`} key={index}>
+              <motion.div 
+                className="glass-panel feature-card-inner" 
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.15, type: "spring", stiffness: 100, damping: 15 }}
+                viewport={{ once: true, margin: "-50px" }}
+                whileHover={{ y: -10, boxShadow: "0 20px 40px rgba(0, 0, 0, 0.08)" }}
+              >
+                <div className="feature-icon-wrapper">
+                  {feature.icon}
+                </div>
+                <h3 className="feature-title">{feature.title}</h3>
+                <p className="feature-description">{feature.description}</p>
+              </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );

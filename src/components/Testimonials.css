@@ -140,10 +140,14 @@
 
 .video-testimonials-scroll {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
   padding: 0 2rem 2rem 2rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .video-testimonials-scroll::-webkit-scrollbar {

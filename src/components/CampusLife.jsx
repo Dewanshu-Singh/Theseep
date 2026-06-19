@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { Compass, Users, MapPin } from 'lucide-react';
+import { Users, MapPin } from 'lucide-react';
 import './CampusLife.css';
 
 const CampusLife = () => {
@@ -59,7 +58,7 @@ const CampusLife = () => {
           >
             <div className="campus-video-wrapper">
               <iframe
-                src="https://www.youtube.com/embed/JSQoV4rA0Io?rel=0"
+                src="https://www.youtube.com/embed/JSQoV4rA0Io?rel=0&playsinline=1"
                 title="VGU Campus Tour"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
