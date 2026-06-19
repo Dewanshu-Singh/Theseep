@@ -17,7 +17,10 @@ const Navbar = () => {
   return (
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="top-bar">
-        IITian Yuva Shakti Mission
+        <div className="container top-bar-content">
+          <span className="top-bar-left">IITian Yuva Shakti Mission</span>
+          <span className="top-bar-right">Call & WhatsApp: +91-8741999992 / help@theseep.org</span>
+        </div>
       </div>
       <div className="container nav-container">
         <div className="logo-group">
