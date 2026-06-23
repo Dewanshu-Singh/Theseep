@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, CheckCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
 
 const HeroSection = () => {
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    navigate('/thank-you', { state: { email } });
+  };
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -86,12 +94,19 @@ const HeroSection = () => {
               <h3>Start The SEEP Application</h3>
               <p>Primary Registration Form</p>
             </div>
-            <form className="admission-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="admission-form" onSubmit={handleFormSubmit}>
               <div className="form-group">
                 <input type="text" placeholder="Full Name" required className="form-input" />
               </div>
               <div className="form-group">
-                <input type="email" placeholder="Email Address" required className="form-input" />
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  required 
+                  className="form-input" 
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className="form-group">
                 <input type="tel" placeholder="Phone Number" required className="form-input" />

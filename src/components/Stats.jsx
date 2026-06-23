@@ -31,12 +31,13 @@ const CountUp = ({ end, suffix = '', duration = 2000 }) => {
       { threshold: 0.3 }
     );
 
-    if (countRef.current) {
-      observer.observe(countRef.current);
+    const currentRef = countRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
     }
     
     return () => {
-      if (countRef.current) observer.unobserve(countRef.current);
+      if (currentRef) observer.unobserve(currentRef);
     };
   }, [end, duration, hasAnimated]);
 
