@@ -21,7 +21,7 @@ const Footer = () => {
             <div className="footer-col">
               <h3>Quick Links</h3>
               <a href="#home">Home</a>
-              <a href="#scholarships">Scholarships</a>
+              <a href="#why-vgu">University</a>
               <a href="#admissions">Admissions</a>
               <a href="#academics">Academics</a>
               <a href="#about">About Us</a>
