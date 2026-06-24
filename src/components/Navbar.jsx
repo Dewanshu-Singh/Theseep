@@ -18,7 +18,12 @@ const Navbar = () => {
     <header className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="top-bar">
         <div className="container top-bar-content">
-          <span className="top-bar-left">IITian Yuva Shakti Mission</span>
+          <div className="top-bar-left">
+            <span className="mission-text">IITian Yuva Shakti Mission</span>
+            <span className="batch-highlight">
+              <span className="pulse-dot"></span> Batch 2026
+            </span>
+          </div>
           <span className="top-bar-right">Call & WhatsApp: +91-8741999992 / help@theseep.org</span>
         </div>
       </div>
@@ -35,7 +40,7 @@ const Navbar = () => {
 
         <nav className="desktop-nav">
           <a href="#home" className="nav-link">Home</a>
-          <a href="#scholarships" className="nav-link">Scholarships</a>
+          <a href="#why-vgu" className="nav-link">University</a>
           <a href="#admissions" className="nav-link">Admissions</a>
           <a href="#academics" className="nav-link">Academics</a>
           <a href="#about" className="nav-link">About Us</a>
@@ -57,7 +62,7 @@ const Navbar = () => {
       {/* Mobile Menu */}
       <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
         <a href="#home" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Home</a>
-        <a href="#scholarships" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Scholarships</a>
+        <a href="#why-vgu" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>University</a>
         <a href="#admissions" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Admissions</a>
         <a href="#academics" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Academics</a>
         <a href="#about" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>About Us</a>

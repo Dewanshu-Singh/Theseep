@@ -69,9 +69,7 @@ const Academics = () => {
               View Complete Curriculum
             </motion.a>
 
-            <a href="#scholarships" className="scholarship-inline-link">
-              * Scholarship is available
-            </a>
+
           </motion.div>
         </div>
       </div>

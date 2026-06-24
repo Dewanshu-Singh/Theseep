@@ -23,6 +23,10 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html, body {
   font-family: var(--font-body);
   background-color: var(--bg-primary);
@@ -85,14 +89,15 @@ button {
 
 .glass-panel {
   background: var(--glass-bg);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border: 1px solid var(--glass-border);
   border-radius: 16px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
   transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
-  transform-style: preserve-3d;
   position: relative;
+  transform: translateZ(0);
+  will-change: transform;
 }
 
 .glass-panel::before {
@@ -236,16 +241,16 @@ button {
 
 .bg-blob-global {
   position: absolute;
-  filter: blur(120px);
-  opacity: 0.6;
+  opacity: 0.7;
   border-radius: 50%;
   animation: blob-float-global 20s infinite alternate ease-in-out;
+  will-change: transform;
 }
 
 .global-blob-1 {
   width: 50vw;
   height: 50vw;
-  background: rgba(128, 0, 0, 0.08); /* Maroon */
+  background: radial-gradient(circle, rgba(128, 0, 0, 0.15) 0%, transparent 70%);
   top: -10%;
   left: -10%;
 }
@@ -253,7 +258,7 @@ button {
 .global-blob-2 {
   width: 60vw;
   height: 60vw;
-  background: rgba(192, 57, 43, 0.06); /* Lighter Maroon */
+  background: radial-gradient(circle, rgba(192, 57, 43, 0.12) 0%, transparent 70%);
   bottom: -20%;
   right: -10%;
   animation-delay: -7s;
@@ -262,7 +267,7 @@ button {
 .global-blob-3 {
   width: 40vw;
   height: 40vw;
-  background: rgba(5, 150, 105, 0.05); /* Success green hint */
+  background: radial-gradient(circle, rgba(5, 150, 105, 0.1) 0%, transparent 70%);
   top: 30%;
   left: 50%;
   animation-delay: -12s;

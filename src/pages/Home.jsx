@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import HeroSection from '../components/HeroSection';
 import Features from '../components/Features';
 import WhyChooseVGU from '../components/WhyChooseVGU';
+import AboutVGU from '../components/AboutVGU';
 import Stats from '../components/Stats';
 import Recruiters from '../components/Recruiters';
 import PromoVideo from '../components/PromoVideo';
@@ -26,6 +27,7 @@ const Home = () => {
         <HeroSection />
         <Features />
         <WhyChooseVGU />
+        <AboutVGU />
         <Stats />
         <Recruiters />
         <Academics />

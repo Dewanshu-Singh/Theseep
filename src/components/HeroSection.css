@@ -5,16 +5,16 @@
   align-items: center;
   padding: 8rem 0 4rem;
   overflow: hidden;
+  background-color: #111;
   background-image: linear-gradient(135deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.4) 100%), url('/pawpaw.png');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
 }
 
 @media (max-width: 1023px) {
   .hero {
     align-items: flex-start;
-    padding-top: 10rem;
+    padding-top: 13rem;
   }
   .form-card {
     margin-top: 1rem;
@@ -218,7 +218,7 @@ select.form-input {
 
 @media (max-width: 768px) {
   .hero {
-    padding: 10rem 0 3rem;
+    padding: 14rem 0 3rem;
     align-items: flex-start;
   }
   .hero-title {

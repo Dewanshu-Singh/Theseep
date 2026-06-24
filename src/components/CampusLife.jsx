@@ -58,7 +58,7 @@ const CampusLife = () => {
           >
             <div className="campus-video-wrapper">
               <iframe
-                src="https://www.youtube.com/embed/JSQoV4rA0Io?rel=0&playsinline=1"
+                src="https://www.youtube.com/embed/no_VNgGSlcE?rel=0&playsinline=1"
                 title="VGU Campus Tour"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

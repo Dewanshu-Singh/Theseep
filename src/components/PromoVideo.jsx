@@ -58,7 +58,7 @@ const PromoVideo = () => {
             onPause={handleVideoPause}
             onPlay={handleVideoPlay}
             preload="metadata"
-            poster="/img4.webp"
+            poster="/campus1.png"
           >
             <source src="/SEEP.mp4" type="video/mp4" />
             Your browser does not support the video tag.
