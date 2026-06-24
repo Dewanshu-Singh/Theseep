@@ -6,8 +6,8 @@ const AdmissionSteps = () => {
   const steps = [
     { num: '1', title: 'Register', desc: 'Fill The SEEP application form.' },
     { num: '2', title: 'Shortlist', desc: 'Scholarship screening by The SEEP.' },
-    { num: '3', title: 'IIT Process', desc: 'Complete IIT BS Degree registration.' },
-    { num: '4', title: 'University', desc: 'Complete University admission.' },
+    { num: '3', title: 'University', desc: 'Complete University admission.' },
+    { num: '4', title: 'IIT Process', desc: 'Complete IIT BS Degree registration.' },
     { num: '5', title: 'Start', desc: 'Begin IIT BS + University degree.' }
   ];
 
