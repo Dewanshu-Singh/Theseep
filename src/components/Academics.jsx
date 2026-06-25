@@ -13,7 +13,7 @@ const Academics = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="section-title">Choose Your <span className="text-gradient">Dual-Degree</span> Pathway</h2>
+          <h2 className="section-title">Our <span className="text-gradient">Flagship Program</span></h2>
           <p className="section-subtitle">
             A revolutionary academic pathway integrating deep tech with practical engineering.
           </p>
@@ -30,25 +30,13 @@ const Academics = () => {
           >
             <div className="program-badge">Flagship Program</div>
             
-            <div className="program-content-wide">
-              {/* IIT Side */}
-              <div className="degree-side">
-                <div className="program-icon-wrap">
-                  <Database className="program-icon" />
-                </div>
-                <h3>IIT BS in Data Science & Applications</h3>
-                <p className="degree-desc">Foundation in statistics, machine learning, and pure data science directly from IIT Madras.</p>
-              </div>
-
-              <div className="plus-divider-wide">+</div>
-
-              {/* VGU Side */}
-              <div className="degree-side">
+            <div className="program-content-wide" style={{ flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+              <div className="degree-side" style={{ flex: 'none', maxWidth: '600px', margin: '0 auto' }}>
                 <div className="program-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.1)', color: '#8b5cf6' }}>
                   <MonitorPlay className="program-icon" />
                 </div>
-                <h4 className="uni-degree">BTech CSE <br/><span>(Artificial Intelligence and Data Engineering)</span></h4>
-                <p className="degree-desc">Hands-on engineering, software development, and direct campus placements at VGU.</p>
+                <h4 className="uni-degree" style={{ fontSize: '1.5rem', marginBottom: '1rem' }}>BTech CSE <br/><span style={{ fontSize: '1.2rem' }}>(Artificial Intelligence and Data Engineering)</span></h4>
+                <p className="degree-desc" style={{ fontSize: '1.1rem' }}>Hands-on engineering, software development, and direct campus placements at VGU.</p>
               </div>
             </div>
 

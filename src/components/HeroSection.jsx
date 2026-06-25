@@ -114,7 +114,7 @@ const HeroSection = () => {
               <div className="form-group">
                 <select required defaultValue="" className="form-input">
                   <option value="" disabled>Select Program</option>
-                  <option value="p1">IIT BS in Data Science + BTech CSE (AI & Data Engineering)</option>
+                  <option value="p1">BTech CSE (AI & Data Engineering)</option>
                 </select>
               </div>
               <motion.button 
