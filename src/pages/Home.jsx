@@ -25,15 +25,21 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <section style={{ backgroundColor: 'transparent', padding: '0', display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center', overflow: 'hidden' }}>
+        <section style={{ backgroundColor: '#f4f4f4', padding: '0.5rem 1rem', display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center', overflow: 'hidden' }}>
           <div style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '28%', minWidth: '250px' }}>
             <img src="/pic1.png" alt="Highlight 1" style={{ height: '180px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
           </div>
-          <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '32%', minWidth: '280px' }}>
-            <img src="/changepic1.png" alt="Highlight 2" style={{ height: '220px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '32%', minWidth: '280px' }}>
+            <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '100%' }}>
+              <img src="/changepic1.png" alt="Highlight 2" style={{ height: '220px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
+            </div>
+            <p style={{ fontSize: '0.85rem', color: '#444', textAlign: 'center', margin: '4px 0 0', fontWeight: '500' }}>QS Asia (India Ranking): Placed 95th among all universities in India.</p>
           </div>
-          <div style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '28%', minWidth: '250px' }}>
-            <img src="/changepic2.png" alt="Highlight 3" style={{ height: '180px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '28%', minWidth: '250px' }}>
+            <div style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '100%' }}>
+              <img src="/changepic2.png" alt="Highlight 3" style={{ height: '180px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
+            </div>
+            <p style={{ fontSize: '0.85rem', color: '#444', textAlign: 'center', margin: '4px 0 0', fontWeight: '500' }}>NIRF Overall Rankings: Placed in the 151–200 band nationally.</p>
           </div>
         </section>
         <Features />
