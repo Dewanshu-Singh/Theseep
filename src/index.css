@@ -279,3 +279,89 @@ button {
   66% { transform: translate(-3vw, 4vh) scale(0.9); }
   100% { transform: translate(4vw, 6vh) scale(1.05); }
 }
+
+/* Responsive Logo Section Styles */
+.hero-logos-section {
+  background-color: #f4f4f4;
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-logo-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-logo-wrap-1, .hero-logo-wrap-3 {
+  width: 28%;
+  min-width: 250px;
+}
+
+.hero-logo-wrap-2 {
+  width: 32%;
+  min-width: 280px;
+}
+
+.hero-logo-crop-1, .hero-logo-crop-3 {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-logo-crop-2 {
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+}
+
+.hero-logo-img-1, .hero-logo-img-3 {
+  height: 180px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+.hero-logo-img-2 {
+  height: 220px;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+  .hero-logos-section {
+    gap: 1.5rem;
+    padding: 1rem;
+    flex-direction: column;
+  }
+  .hero-logo-wrap-1, .hero-logo-wrap-2, .hero-logo-wrap-3 {
+    width: 100%;
+    min-width: 0;
+  }
+  .hero-logo-img-1, .hero-logo-img-3 {
+    height: 150px;
+    max-width: 150%;
+  }
+  .hero-logo-img-2 {
+    height: 180px;
+    max-width: 150%;
+  }
+  .hero-logo-crop-1, .hero-logo-crop-3 {
+    height: 50px;
+  }
+  .hero-logo-crop-2 {
+    height: 65px;
+  }
+}

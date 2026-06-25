@@ -25,18 +25,20 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <section style={{ backgroundColor: '#f4f4f4', padding: '0.5rem 1rem', display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap', alignItems: 'center', overflow: 'hidden' }}>
-          <div style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '28%', minWidth: '250px' }}>
-            <img src="/pic1.png" alt="Highlight 1" style={{ height: '180px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '32%', minWidth: '280px' }}>
-            <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '100%' }}>
-              <img src="/changepic1.png" alt="Highlight 2" style={{ height: '220px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
+        <section className="hero-logos-section">
+          <div className="hero-logo-wrap-1 hero-logo-wrapper">
+            <div className="hero-logo-crop-1">
+              <img src="/pic1.png" alt="Highlight 1" className="hero-logo-img-1" />
             </div>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '28%', minWidth: '250px' }}>
-            <div style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '100%' }}>
-              <img src="/changepic2.png" alt="Highlight 3" style={{ height: '180px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
+          <div className="hero-logo-wrap-2 hero-logo-wrapper">
+            <div className="hero-logo-crop-2">
+              <img src="/changepic1.png" alt="Highlight 2" className="hero-logo-img-2" />
+            </div>
+          </div>
+          <div className="hero-logo-wrap-3 hero-logo-wrapper">
+            <div className="hero-logo-crop-3">
+              <img src="/changepic2.png" alt="Highlight 3" className="hero-logo-img-3" />
             </div>
           </div>
         </section>
