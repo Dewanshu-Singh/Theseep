@@ -24,16 +24,15 @@ const Footer = () => {
               <a href="#why-vgu">University</a>
               <a href="#admissions">Admissions</a>
               <a href="#academics">Academics</a>
-              <a href="#about">About Us</a>
-              <a href="#faq">FAQs</a>
+              <a href="#about-vgu">About Us</a>
             </div>
             
             <div className="footer-col">
               <h3>About The SEEP</h3>
-              <a href="#mission">Mission</a>
-              <a href="#objectives">Objectives</a>
-              <a href="#nep2020">NEP 2020</a>
-              <a href="#policies">Policies</a>
+              <a href="#about-vgu">Mission</a>
+              <a href="#about-vgu">Objectives</a>
+              <a href="#academics">NEP 2020</a>
+              <a href="#admissions">Policies</a>
             </div>
           </div>
         </div>

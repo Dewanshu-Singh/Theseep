@@ -43,7 +43,7 @@ const Navbar = () => {
           <a href="#why-vgu" className="nav-link">University</a>
           <a href="#admissions" className="nav-link">Admissions</a>
           <a href="#academics" className="nav-link">Academics</a>
-          <a href="#about" className="nav-link">About Us</a>
+          <a href="#about-vgu" className="nav-link">About Us</a>
         </nav>
 
         <div className="nav-actions">
@@ -65,7 +65,7 @@ const Navbar = () => {
         <a href="#why-vgu" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>University</a>
         <a href="#admissions" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Admissions</a>
         <a href="#academics" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Academics</a>
-        <a href="#about" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>About Us</a>
+        <a href="#about-vgu" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>About Us</a>
         <button className="btn btn-primary w-full mt-4">Apply Now</button>
       </div>
     </header>
