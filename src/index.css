@@ -309,7 +309,7 @@ button {
 }
 
 .hero-logo-crop-1, .hero-logo-crop-3 {
-  height: 60px;
+  height: 75px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -318,7 +318,7 @@ button {
 }
 
 .hero-logo-crop-2 {
-  height: 80px;
+  height: 95px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -327,14 +327,14 @@ button {
 }
 
 .hero-logo-img-1, .hero-logo-img-3 {
-  height: 180px;
+  height: 210px;
   width: auto;
   max-width: none;
   object-fit: contain;
 }
 
 .hero-logo-img-2 {
-  height: 220px;
+  height: 260px;
   width: auto;
   max-width: none;
   object-fit: contain;
