@@ -342,8 +342,8 @@ button {
 
 @media (max-width: 768px) {
   .hero-logos-section {
-    gap: 0.5rem;
-    padding: 0.5rem;
+    gap: 0.2rem;
+    padding: 0.2rem;
     flex-direction: row;
     flex-wrap: nowrap;
   }
@@ -356,17 +356,17 @@ button {
     min-width: 0;
   }
   .hero-logo-img-1, .hero-logo-img-3 {
-    height: 70px;
+    height: 110px;
     max-width: none;
   }
   .hero-logo-img-2 {
-    height: 90px;
+    height: 130px;
     max-width: none;
   }
   .hero-logo-crop-1, .hero-logo-crop-3 {
-    height: 25px;
+    height: 35px;
   }
   .hero-logo-crop-2 {
-    height: 35px;
+    height: 45px;
   }
 }
