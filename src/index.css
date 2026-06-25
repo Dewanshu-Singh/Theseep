@@ -342,26 +342,31 @@ button {
 
 @media (max-width: 768px) {
   .hero-logos-section {
-    gap: 1.5rem;
-    padding: 1rem;
-    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    flex-direction: row;
+    flex-wrap: nowrap;
   }
-  .hero-logo-wrap-1, .hero-logo-wrap-2, .hero-logo-wrap-3 {
-    width: 100%;
+  .hero-logo-wrap-1, .hero-logo-wrap-3 {
+    width: 30%;
+    min-width: 0;
+  }
+  .hero-logo-wrap-2 {
+    width: 40%;
     min-width: 0;
   }
   .hero-logo-img-1, .hero-logo-img-3 {
-    height: 150px;
-    max-width: 150%;
+    height: 70px;
+    max-width: none;
   }
   .hero-logo-img-2 {
-    height: 180px;
-    max-width: 150%;
+    height: 90px;
+    max-width: none;
   }
   .hero-logo-crop-1, .hero-logo-crop-3 {
-    height: 50px;
+    height: 25px;
   }
   .hero-logo-crop-2 {
-    height: 65px;
+    height: 35px;
   }
 }
