@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Users, MapPin } from 'lucide-react';
+import { Users, MapPin, Award, Trophy } from 'lucide-react';
 import './CampusLife.css';
 
 const CampusLife = () => {
@@ -43,6 +43,24 @@ const CampusLife = () => {
                 <div>
                   <h4 style={{ fontSize: '1rem' }}>Diverse Community</h4>
                   <p style={{ fontSize: '0.85rem' }}>Connect with peers from diverse backgrounds.</p>
+                </div>
+              </div>
+              <div className="campus-highlight-item" style={{ padding: '0.5rem' }}>
+                <div className="highlight-icon" style={{ width: '40px', height: '40px' }}>
+                  <Trophy size={20} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1rem' }}>QS Asia (India Ranking)</h4>
+                  <p style={{ fontSize: '0.85rem' }}>Placed 95th among all universities in India.</p>
+                </div>
+              </div>
+              <div className="campus-highlight-item" style={{ padding: '0.5rem' }}>
+                <div className="highlight-icon" style={{ width: '40px', height: '40px' }}>
+                  <Award size={20} />
+                </div>
+                <div>
+                  <h4 style={{ fontSize: '1rem' }}>NIRF Overall Rankings</h4>
+                  <p style={{ fontSize: '0.85rem' }}>Placed in the 151–200 band nationally.</p>
                 </div>
               </div>
             </div>
