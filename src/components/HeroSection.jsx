@@ -76,6 +76,7 @@ const HeroSection = () => {
               <span>100% IIT BS Fee Funded</span>
             </div>
           </motion.div>
+        </motion.div>
         
         <motion.div 
           className="hero-visual"
