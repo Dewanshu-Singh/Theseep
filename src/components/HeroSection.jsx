@@ -77,10 +77,10 @@ const HeroSection = () => {
             </div>
           </motion.div>
           
-          <div className="hero-extra-images" style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', marginTop: '2rem', alignItems: 'center' }}>
-            <img src="/pic1.png" alt="Highlight 1" style={{ height: '70px', width: 'auto', objectFit: 'contain', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.9)', padding: '5px' }} />
-            <img src="/pic2.png" alt="Highlight 2" style={{ height: '70px', width: 'auto', objectFit: 'contain', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.9)', padding: '5px' }} />
-            <img src="/pic3.png" alt="Highlight 3" style={{ height: '70px', width: 'auto', objectFit: 'contain', borderRadius: '8px', background: 'rgba(255, 255, 255, 0.9)', padding: '5px' }} />
+          <div className="hero-extra-images" style={{ display: 'flex', flexWrap: 'wrap', gap: '2rem', marginTop: '2rem', alignItems: 'center' }}>
+            <img src="/pic1.png" alt="Highlight 1" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+            <img src="/pic2.png" alt="Highlight 2" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
+            <img src="/pic3.png" alt="Highlight 3" style={{ height: '100px', width: 'auto', objectFit: 'contain' }} />
           </div>
         </motion.div>
         
