@@ -47,7 +47,7 @@ const Academics = () => {
                 <div className="program-icon-wrap" style={{ background: 'rgba(139, 92, 246, 0.1)', color: '#8b5cf6' }}>
                   <MonitorPlay className="program-icon" />
                 </div>
-                <h4 className="uni-degree">B.Tech CSE <br/><span>(Data Science & AI)</span></h4>
+                <h4 className="uni-degree">BTech CSE <br/><span>(Artificial Intelligence and Data Engineering)</span></h4>
                 <p className="degree-desc">Hands-on engineering, software development, and direct campus placements at VGU.</p>
               </div>
             </div>
