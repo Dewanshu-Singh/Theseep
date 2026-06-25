@@ -21,7 +21,7 @@ const Navbar = () => {
           <div className="top-bar-left">
             <span className="mission-text">IITian Yuva Shakti Mission</span>
             <span className="batch-highlight">
-              <span className="pulse-dot"></span> Batch 2026
+              <span className="pulse-dot"></span> September Batch 2026
             </span>
           </div>
           <span className="top-bar-right">Call & WhatsApp: +91-8741999992 / help@theseep.org</span>
@@ -47,9 +47,9 @@ const Navbar = () => {
         </nav>
 
         <div className="nav-actions">
-          <button className="btn btn-primary nav-btn">
+          <a href="#home" className="btn btn-primary nav-btn">
             Apply Now <ChevronRight size={16} />
-          </button>
+          </a>
           <button 
             className="mobile-menu-btn" 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -66,7 +66,7 @@ const Navbar = () => {
         <a href="#admissions" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Admissions</a>
         <a href="#academics" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>Academics</a>
         <a href="#about-vgu" className="mobile-link" onClick={() => setMobileMenuOpen(false)}>About Us</a>
-        <button className="btn btn-primary w-full mt-4">Apply Now</button>
+        <a href="#home" className="btn btn-primary w-full mt-4" onClick={() => setMobileMenuOpen(false)}>Apply Now</a>
       </div>
     </header>
   );
