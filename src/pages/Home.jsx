@@ -33,13 +33,11 @@ const Home = () => {
             <div style={{ height: '80px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '100%' }}>
               <img src="/changepic1.png" alt="Highlight 2" style={{ height: '220px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
             </div>
-            <p style={{ fontSize: '0.85rem', color: '#444', textAlign: 'center', margin: '4px 0 0', fontWeight: '500' }}>QS Asia (India Ranking): Placed 95th among all universities in India.</p>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '28%', minWidth: '250px' }}>
             <div style={{ height: '60px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', width: '100%' }}>
               <img src="/changepic2.png" alt="Highlight 3" style={{ height: '180px', width: 'auto', maxWidth: 'none', objectFit: 'contain' }} />
             </div>
-            <p style={{ fontSize: '0.85rem', color: '#444', textAlign: 'center', margin: '4px 0 0', fontWeight: '500' }}>NIRF Overall Rankings: Placed in the 151–200 band nationally.</p>
           </div>
         </section>
         <Features />
