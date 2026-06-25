@@ -25,7 +25,7 @@ const Home = () => {
       <Navbar />
       <main>
         <HeroSection />
-        <section style={{ backgroundColor: '#ffffff', padding: '3rem 1rem', display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap', alignItems: 'center' }}>
+        <section style={{ backgroundColor: '#ffffff', padding: '1rem', display: 'flex', justifyContent: 'center', gap: '4rem', flexWrap: 'wrap', alignItems: 'center' }}>
           <img src="/pic1.png" alt="Highlight 1" style={{ height: '300px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
           <img src="/changepic1.png" alt="Highlight 2" style={{ height: '350px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
           <img src="/changepic2.png" alt="Highlight 3" style={{ height: '300px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
