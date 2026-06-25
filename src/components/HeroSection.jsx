@@ -76,13 +76,6 @@ const HeroSection = () => {
               <span>100% IIT BS Fee Funded</span>
             </div>
           </motion.div>
-          
-          <div className="hero-extra-images" style={{ display: 'flex', flexWrap: 'wrap', gap: '3rem', marginTop: '3rem', alignItems: 'center', justifyContent: 'flex-start' }}>
-            <img src="/pic1.png" alt="Highlight 1" style={{ height: '250px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
-            <img src="/pic2.png" alt="Highlight 2" style={{ height: '250px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
-            <img src="/pic3.png" alt="Highlight 3" style={{ height: '250px', width: 'auto', maxWidth: '100%', objectFit: 'contain' }} />
-          </div>
-        </motion.div>
         
         <motion.div 
           className="hero-visual"
